@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista Film</title>
+    <title>Chi siamo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
@@ -12,9 +12,9 @@
             <a class="navbar-brand" href="/">Moviemania</a>
             <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="/">Home</a>
-                <a class="nav-link" href="/chi-siamo">Chi siamo</a>
+                <a class="nav-link active" aria-current="page" href="/chi-siamo">Chi siamo</a>
                 <a class="nav-link" href="/contatti">Contatti</a>
-                <a class="nav-link active" aria-current="page" href="/movies">Film</a>
+                <a class="nav-link" href="/movies">Film</a>
             </div>
         </div>
     </nav>
@@ -22,21 +22,19 @@
     <div class="container py-5">
         <div class="row mb-4">
             <div class="col text-center">
-                <h1 class="fw-bold">Tutti i nostri film</h1>
-                <p class="text-muted">Ogni card porta alla scheda di dettaglio.</p>
+                <h1 class="fw-bold">Il nostro team</h1>
+                <p class="text-muted">Scopri chi lavora dietro le quinte di Moviemania.</p>
             </div>
         </div>
 
         <div class="row g-4">
-            @foreach($movies as $movie)
-                <div class="col-12 col-md-4 col-lg-3">
+            @foreach($users as $user)
+                <div class="col-12 col-md-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="{{ $movie['image'] }}" class="card-img-top" alt="Poster di {{ $movie['title'] }}">
                         <div class="card-body text-center">
-                            <h5 class="card-title">{{ $movie['title'] }}</h5>
-                            <p class="card-text text-muted mb-1">{{ $movie['genre'] }}</p>
-                            <p class="card-text small text-muted">Regista: {{ $movie['director'] }}</p>
-                            <a href="{{ route('movie.detail', ['id' => $movie['id']]) }}" class="btn btn-dark mt-2">Leggi di più</a>
+                            <h5 class="card-title">{{ $user['name'] }} {{ $user['surname'] }}</h5>
+                            <p class="card-text text-muted">{{ $user['role'] }}</p>
+                            <a href="{{ route('about.detail', ['name' => $user['name']]) }}" class="btn btn-dark">Leggi di più</a>
                         </div>
                     </div>
                 </div>
