@@ -23,22 +23,18 @@
             </div>
         </div>
 
-        <div class="mt-8 grid gap-5 md:grid-cols-3">
-            <div class="content-card">
-                <p class="eyebrow">01</p>
-                <h2 class="mt-2 text-lg font-bold text-orange-300">Esperienza</h2>
-                <p class="mt-2 text-sm text-zinc-300">Oltre 10 anni tra eventi BBQ, catering e formazione pratica sulla cottura alla brace.</p>
-            </div>
-            <div class="content-card">
-                <p class="eyebrow">02</p>
-                <h2 class="mt-2 text-lg font-bold text-orange-300">Metodo</h2>
-                <p class="mt-2 text-sm text-zinc-300">Guide passo-passo, test reali e tecniche replicabili con griglie domestiche e professionali.</p>
-            </div>
-            <div class="content-card">
-                <p class="eyebrow">03</p>
-                <h2 class="mt-2 text-lg font-bold text-orange-300">Community</h2>
-                <p class="mt-2 text-sm text-zinc-300">Una community che cresce ogni giorno, fatta di appassionati che vogliono migliorare davvero.</p>
-            </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+            @foreach ($users as $user)
+                <article class="content-card flex flex-col gap-3">
+                    <div class="flex items-center justify-between">
+                        <p class="eyebrow">Team</p>
+                        <span class="rounded-full bg-orange-500/15 px-3 py-1 text-xs text-orange-200">{{ $user['role'] }}</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-orange-200">{{ $user['name'] }} {{ $user['surname'] }}</h2>
+                    <p class="text-sm text-zinc-300">Specialista focale nelle nostre produzioni BBQ e punto di riferimento per la community.</p>
+                    <a href="{{ route('about.detail', ['name' => $user['name']]) }}" class="btn-primary mt-auto w-fit">Leggi di più</a>
+                </article>
+            @endforeach
         </div>
     </section>
 @endsection

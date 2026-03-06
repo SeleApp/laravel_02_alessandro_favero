@@ -22,8 +22,10 @@
             </a>
             <div class="flex items-center gap-1 text-sm md:gap-3">
                 <a href="{{ route('home') }}" class="top-link {{ request()->routeIs('home') ? 'top-link-active' : '' }}">Homepage</a>
-                <a href="{{ route('about') }}" class="top-link {{ request()->routeIs('about') ? 'top-link-active' : '' }}">Chi siamo</a>
+                <a href="{{ route('about') }}" class="top-link {{ request()->routeIs('about', 'about.detail') ? 'top-link-active' : '' }}">Chi siamo</a>
+                <a href="{{ route('movies') }}" class="top-link {{ request()->routeIs('movies', 'movie.detail') ? 'top-link-active' : '' }}">Film</a>
                 <a href="{{ route('services') }}" class="top-link {{ request()->routeIs('services') ? 'top-link-active' : '' }}">Servizi</a>
+                <a href="{{ route('contact') }}" class="top-link {{ request()->routeIs('contact') ? 'top-link-active' : '' }}">Contatti</a>
             </div>
         </nav>
     </header>
