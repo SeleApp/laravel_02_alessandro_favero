@@ -9,12 +9,12 @@
 <body class="bg-light">
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark mb-4">
         <div class="container">
-            <a class="navbar-brand" href="/">Moviemania</a>
+            <a class="navbar-brand" href="{{ route('home') }}">Moviemania</a>
             <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="/">Home</a>
-                <a class="nav-link" href="/chi-siamo">Chi siamo</a>
-                <a class="nav-link" href="/contatti">Contatti</a>
-                <a class="nav-link" href="/movies">Film</a>
+                <a class="nav-link" href="{{ route('home') }}">Home</a>
+                <a class="nav-link" href="{{ route('about') }}">Chi siamo</a>
+                <a class="nav-link" href="{{ route('contact') }}">Contatti</a>
+                <a class="nav-link" href="{{ route('movies') }}">Film</a>
             </div>
         </div>
     </nav>
@@ -25,8 +25,8 @@
                 <h1 class="display-5 fw-bold">Benvenuto su Moviemania</h1>
                 <p class="lead mt-3">Scopri il nostro team, contattaci per collaborazioni e sfoglia la lista dei film che amiamo di piu.</p>
                 <div class="d-flex gap-3 justify-content-center mt-4">
-                    <a href="/chi-siamo" class="btn btn-dark">Chi siamo</a>
-                    <a href="/movies" class="btn btn-outline-dark">Vai ai film</a>
+                    <a href="{{ route('about') }}" class="btn btn-dark">Chi siamo</a>
+                    <a href="{{ route('movies') }}" class="btn btn-outline-dark">Vai ai film</a>
                 </div>
             </div>
         </div>
